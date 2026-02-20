@@ -304,7 +304,7 @@ export default function Home() {
     >
       <div className="aspect-[5/4] rounded-3xl overflow-hidden shadow-2xl">
         <img
-          src="/public/micheal.jpeg"
+          src="/micheal.jpeg"
           alt="Founder"
           className="w-full h-full object-cover"
         />
