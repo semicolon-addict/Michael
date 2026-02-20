@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.out/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Replit
+.replit
+.local/
+
+# Temporary files
+*.log
+*.tmp
+*.tar.gz
+
+# Vercel
+.vercel/
+
+# Server static builds (if any)
+server/public/
+
+# TypeScript
+*.tsbuildinfo
+
+# Cache
+.cache/

@@ -1,0 +1,80 @@
+Design and build a premium, professional single-page portfolio website with a fresh, editorial-grade visual identity. Every section should feel intentional, modern, and polished - inspired by award-winning agency websites. Use HTML, CSS, and Vanilla JavaScript only.
+
+🎨 Visual Design Language
+
+Primary Palette: Off-white #F4F7F5 background, deep charcoal #141C1A for text, and teal-to-ocean blue as the dominant brand color range - use #0A84FF (electric blue), #00C2A8 (teal), and #0D5C63 (deep sea green) as your core accent trio
+
+Secondary Accent: Rich emerald #1DB954 for hover states, active elements, and stat highlights
+
+Restricted Accent (Use Sparingly): Deep purple #6B21A8 - use only on 1–2 highlighted sections (e.g., testimonials background or a single service card) as a contrast pop, never as a primary color
+
+Surface Colors: Soft blue-gray #EDF2F7 for card backgrounds, dark navy #0B1120 for inverted/dark sections
+
+Typography: Google Fonts - Playfair Display for bold editorial headings, Inter for body and UI text
+Layout: Generous whitespace, asymmetric grid layouts, oversized typography, layered depth with subtle shadows
+Animations: Scroll-triggered slide-up reveals, smooth hover transitions, magnetic button effects, subtle floating shapes in the hero using CSS keyframes
+Aesthetic: Clean, confident, coastal-tech - like a premium SaaS brand meets a creative agency
+
+📐 Website Structure
+
+Navigation Bar
+Fixed top navbar with frosted glass effect (backdrop-filter: blur) on a near-transparent dark navy base. Logo in bold stylized text on the left. Nav links on the right with a smooth teal underline hover animation. A pill-shaped CTA button ("Get in Touch") in electric blue with a teal hover sweep transition.
+
+Hero Section
+Full-viewport hero with a large bold typographic statement across two lines (e.g., "We Build. We Grow. We Deliver."), set against a dark navy #0B1120 background with a subtle animated gradient mesh in deep teal and blue tones (no purple here). Below the headline: a short tagline in muted gray, two CTA buttons - one solid blue, one ghost/outlined in teal. A soft glowing orb or abstract CSS blob floats in the background. Smooth scroll-down arrow at the bottom in teal.
+
+Services Section - Pinned Horizontal Scroll (Core Feature)
+A full-screen section pinned in place while the user scrolls vertically - each service card snaps into view horizontally one at a time. The 5 services and their unique card accent colors:
+
+📈 Marketing - Ocean Blue #0A84FF
+
+🗂️ Management - Deep Sea Green #0D5C63
+
+🚗 Car Rentals - Teal #00C2A8
+
+🎨 Art - Deep Purple #6B21A8 (this is the one allowed purple moment)
+
+🎓 Education - Emerald #059669
+
+Each card should feature:
+
+A bold diagonal or layered accent color block as background
+
+Oversized faded service number (01, 02...) behind the title for depth
+
+Service icon, large bold title, 2-line description, and a minimal "Explore →" text link
+
+Smooth slide + fade transition between cards
+
+Scroll progress dot indicator below showing active card position
+
+About Section
+Light off-white background. Asymmetric two-column layout - left: large image with an overlapping teal accent block and a floating badge ("10+ Years of Excellence") - right: small-caps section label in teal, bold multi-line heading in charcoal, descriptive paragraph, and 3 animated stat counters (200+ Clients, 500+ Projects, 15+ Awards) with teal number highlights. A minimal "Our Story →" link with an arrow.
+
+Why Choose Us Section
+Soft blue-gray #EDF2F7 background. A clean 3–4 card grid with thin teal-tinted borders, icon in electric blue at top, bold short title, 1-line description. Cards lift on hover with a teal glow box-shadow transition.
+
+Testimonials Section
+Inverted dark navy #0B1120 background - this is the only other section where a subtle purple-to-navy gradient edge is allowed as a background accent. Oversized teal quotation marks, an auto-sliding carousel of 3 testimonials with client name, role, company, and star rating in teal-gold. Minimal left/right navigation arrows.
+
+Contact Section
+Off-white background with a bold centered headline. Minimal form (Name, Email, Message) with floating label inputs and animated teal bottom-border focus effects. Full-width pill-style submit button in electric blue with a teal right-to-left hover sweep. Social media icons in dark charcoal, glowing teal on hover.
+
+Footer
+Dark navy footer with logo and short tagline, nav link columns in muted gray, a bottom divider line in teal, copyright text, and a "Back to Top ↑" button that glows teal on hover.
+
+⚙️ Technical Requirements
+
+Fully responsive - mobile-first, adapts cleanly to tablet and desktop
+
+Pinned horizontal scroll for services using CSS position: sticky + JS scroll tracking with snap behavior
+
+Scroll-triggered entrance animations using vanilla JS IntersectionObserver
+
+Smooth site-wide scrolling via scroll-behavior: smooth
+
+Icons from Lucide Icons or Font Awesome via CDN
+
+Placeholder content for all text and images
+
+Delivered as a single clean HTML file with embedded CSS and JS
