@@ -10,9 +10,31 @@ export const contactSubmissions = pgTable("contact_submissions", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const insertContactSchema = createInsertSchema(contactSubmissions).omit({
+/* Base schema from Drizzle */
+const baseInsertSchema = createInsertSchema(contactSubmissions).omit({
   id: true,
   createdAt: true,
+});
+
+/* Extended validation rules */
+export const insertContactSchema = baseInsertSchema.extend({
+  name: z
+    .string()
+    .min(1, "Name is required")
+    .max(100, "Name cannot exceed 100 characters"),
+
+  email: z
+    .string()
+    .email("Invalid email format")
+    .refine(
+      (val) => /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(val),
+      "Only @gmail.com email addresses are allowed"
+    ),
+
+  message: z
+    .string()
+    .min(1, "Description is required")
+    .max(500, "Description cannot exceed 500 characters"),
 });
 
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
