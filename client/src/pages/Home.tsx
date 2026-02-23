@@ -5,6 +5,7 @@ import { z } from "zod";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Loader2, ArrowRight, CheckCircle2, ChevronRight, Star } from "lucide-react";
 
+import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
@@ -18,29 +19,41 @@ import { useContactSubmission } from "@/hooks/use-contact";
 // Schema matching shared routes
 const formSchema = api.contact.submit.input;
 
-const services = [
+type Service = {
+  title: string;
+  slug: string;
+  desc: string;
+  image: string;
+};
+
+const services: Service[] = [
   {
     title: "Digital Marketing",
+    slug: "digital-marketing",
     desc: "Data-driven strategies to amplify your brand presence and drive real conversions across all digital channels.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80", // Office analytics
   },
   {
     title: "Brand Management",
+    slug: "brand-management",
     desc: "Crafting cohesive identities that resonate with your audience and stand the test of time.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80", // Strategy meeting
   },
   {
     title: "Web Development",
+    slug: "web-development",
     desc: "Building blazing fast, secure, and scalable web applications using modern technologies.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80", // Coding
   },
   {
     title: "Creative Direction",
+    slug: "creative-direction",
     desc: "Visual storytelling that captures imagination and communicates your core values effectively.",
     image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80", // Creative studio
   },
   {
     title: "Education & Training",
+    slug: "education-training",
     desc: "Empowering your team with the skills and knowledge needed to maintain digital excellence.",
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80", // Workshop
   },
@@ -137,14 +150,35 @@ export default function Home() {
               We Deliver.
             </span>
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12"
+            className="text-lg md:text-xl text-white/60 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
-            Elevating brands through strategic design, innovative technology, and data-driven marketing solutions.
+            Gabulouz LLC delivers expert{" "}
+            
+            <span className="relative inline-block group cursor-default">
+            <span className="text-white relative z-10">
+              consulting
+            </span>
+            <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-gradient-to-r from-blue-500 to-teal-400 transition-all duration-500 group-hover:w-full"></span>
+          </span>
+            , performance-driven{" "}
+            <span className="relative inline-block group cursor-default">
+              <span className="text-white relative z-10">
+                brand marketing
+              </span>
+              <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-gradient-to-r from-blue-500 to-teal-400 transition-all duration-500 group-hover:w-full"></span>
+            </span>
+            , and long-term{" "}
+            <span className="relative inline-block group cursor-default">
+              <span className="text-white relative z-10">
+                brand management strategies
+              </span>
+              <span className="absolute left-0 -bottom-1 h-[3px] w-0 bg-gradient-to-r from-blue-500 to-teal-400 transition-all duration-500 group-hover:w-full"></span>
+            </span>{" "}
+            designed to position businesses for sustainable growth and market authority.
           </motion.p>
 
           <motion.div
@@ -208,12 +242,16 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="snap-center"
               >
-                <ServiceCard
-                  number={`0${idx + 1}`}
-                  title={service.title}
-                  description={service.desc}
-                  image={service.image}
-                />
+                <Link href={`/services/${service.slug}`}>
+                <a className="block cursor-pointer">
+                  <ServiceCard
+                    number={`0${idx + 1}`}
+                    title={service.title}
+                    description={service.desc}
+                    image={service.image}
+                  />
+                </a>
+              </Link>
               </motion.div>
             ))}
           </div>
@@ -433,7 +471,8 @@ export default function Home() {
             <div>
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Let's Talk</h2>
               <p className="text-muted-foreground text-lg mb-12">
-                Ready to start your next project? Fill out the form and we'll get back to you within 24 hours.
+                Ready to start your next project? 
+                <br></br>Fill out the form and we'll get back to you within 24 hours.
               </p>
 
               <div className="space-y-8">
@@ -443,7 +482,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-1">Visit Us</h3>
-                    <p className="text-muted-foreground">123 Innovation Blvd, Tech District, CA</p>
+                    <p className="text-muted-foreground">2121 N broad st, #1019 Philadelphia pa 19132, United States.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -452,7 +491,16 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold mb-1">Email Us</h3>
-                    <p className="text-muted-foreground">hello@Gabulouz LLC.agency</p>
+                    <p className="text-muted-foreground">info@gabulouz.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <ChevronRight className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-1">Talk with Us</h3>
+                    <p className="text-muted-foreground">+1 (833) 315 2102</p>
                   </div>
                 </div>
               </div>

@@ -17,17 +17,6 @@ export default function Footer() {
               We build digital experiences that drive growth, engage users, and elevate brands. 
               Let's create something extraordinary together.
             </p>
-            <div className="flex space-x-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -35,17 +24,17 @@ export default function Footer() {
             <ul className="space-y-4 text-muted-foreground">
               <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Services</a></li>
-              <li><a href="#work" className="hover:text-primary transition-colors">Our Work</a></li>
-              <li><a href="#careers" className="hover:text-primary transition-colors">Careers</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
             <ul className="space-y-4 text-muted-foreground">
-              <li>hello@Gabulouz LLC.agency</li>
-              <li>+1 (555) 123-4567</li>
-              <li>123 Innovation Blvd,<br />Tech District, CA 94103</li>
+              <li>info@gabulouz.com</li>
+              <li>+1 (833) 315 2102</li>
+              <li>2121 N broad st, #1019
+                Philadelphia pa 19132,
+                United States.</li>
             </ul>
           </div>
         </div>

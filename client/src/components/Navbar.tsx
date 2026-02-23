@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 const navLinks = [
   { name: "Services", href: "#services" },
@@ -13,10 +14,12 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
 
+  /* Scroll behavior for navbar styling */
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > window.innerHeight - 100);
+      setIsScrolled(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,16 +28,22 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string
-  ) => {
-    e.preventDefault();
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+  /* Universal section navigation */
+  const navigateToSection = (id: string) => {
+    if (location !== "/") {
+      setLocation("/");
+      setTimeout(() => {
+        document.querySelector(id)?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 150);
+    } else {
+      document.querySelector(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
     }
+
+    setIsMobileMenuOpen(false);
   };
 
   const textColor = isScrolled ? "text-foreground" : "text-white";
@@ -50,21 +59,15 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "circOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/80 backdrop-blur-md shadow-sm border-b border-black/5 py-4"
+            ? "bg-white/90 backdrop-blur-md shadow-md py-4"
             : "bg-transparent py-6"
         }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
-          
-          {/* LOGO (Scroll to Hero) */}
-          <a
-            href="#hero"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#hero")?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
+
+          {/* LOGO */}
+          <button
+            onClick={() => navigateToSection("#hero")}
             className={`flex items-center gap-3 text-2xl font-display font-bold ${textColor}`}
           >
             <img
@@ -74,27 +77,22 @@ export default function Navbar() {
             />
             Gabulouz LLC
             <span className="text-primary">.</span>
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
+                onClick={() => navigateToSection(link.href)}
                 className={`text-sm font-medium transition-colors ${linkColor}`}
               >
                 {link.name}
-              </a>
+              </button>
             ))}
 
             <Button
-              onClick={() =>
-                document
-                  .querySelector("#contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => navigateToSection("#contact")}
               className={`rounded-full px-6 ${
                 isScrolled
                   ? "bg-foreground text-background hover:bg-foreground/90"
@@ -136,24 +134,18 @@ export default function Navbar() {
 
             <div className="flex-1 flex flex-col items-center justify-center space-y-8 p-8">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
+                  onClick={() => navigateToSection(link.href)}
                   className="text-3xl font-display font-medium text-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
 
               <Button
                 size="lg"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  document
-                    .querySelector("#contact")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
+                onClick={() => navigateToSection("#contact")}
                 className="mt-8 w-full max-w-xs text-lg rounded-full"
               >
                 Start a Project
