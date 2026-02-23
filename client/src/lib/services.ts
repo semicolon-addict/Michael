@@ -72,22 +72,19 @@ export const services = {
         heading: "Custom Web Applications",
         image:
           "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000&q=80",
-        content:
-          "Full-stack development tailored to business-specific needs.",
+        content: "Full-stack development tailored to business-specific needs.",
       },
       {
         heading: "Scalable Architecture",
         image:
           "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1000&q=80",
-        content:
-          "Future-proof systems designed for performance and expansion.",
+        content: "Future-proof systems designed for performance and expansion.",
       },
       {
         heading: "Security & Optimization",
         image:
           "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000&q=80",
-        content:
-          "Enterprise-level security and performance tuning practices.",
+        content: "Enterprise-level security and performance tuning practices.",
       },
     ],
   },
@@ -103,8 +100,7 @@ export const services = {
         heading: "Campaign Concepting",
         image:
           "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1000&q=80",
-        content:
-          "High-impact visual storytelling aligned with brand strategy.",
+        content: "High-impact visual storytelling aligned with brand strategy.",
       },
       {
         heading: "Visual Identity Systems",
@@ -134,9 +130,39 @@ export const services = {
         heading: "Executive Consulting",
         image:
           "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1000&q=80",
-        content:
-          "High-level strategic guidance for leadership teams.",
+        content: "High-level strategic guidance for leadership teams.",
       },
     ],
   },
-} as const;
+
+    "car-rentals": {
+      title: "Car Rentals",
+      heroImage:
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80",
+      description:
+        "Premium and reliable car rental services designed for comfort, flexibility, and seamless travel experiences.",
+      sections: [
+        {
+          heading: "Luxury & Economy Fleet",
+          image:
+            "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1000&q=80",
+          content:
+            "A wide range of vehicles from luxury sedans to economical city cars — maintained for safety, comfort, and performance.",
+        },
+        {
+          heading: "Flexible Rental Plans",
+          image:
+            "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1000&q=80",
+          content:
+            "Daily, weekly, and long-term rental options tailored to individual and corporate travel needs.",
+        },
+        {
+          heading: "Corporate & Event Rentals",
+          image:
+            "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=1000&q=80",
+          content:
+            "Professional transportation solutions for business executives, corporate events, and special occasions.",
+        },
+      ],
+    },
+  } as const;

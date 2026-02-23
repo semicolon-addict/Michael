@@ -46,6 +46,12 @@ const services: Service[] = [
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80", // Coding
   },
   {
+  title: "Car Rentals",
+  slug: "car-rentals",
+  desc: "Premium and reliable car rental solutions for individuals and businesses.",
+  image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80", // Car rental
+  },
+  {
     title: "Creative Direction",
     slug: "creative-direction",
     desc: "Visual storytelling that captures imagination and communicates your core values effectively.",
