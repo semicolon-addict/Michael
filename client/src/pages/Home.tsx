@@ -311,7 +311,7 @@ export default function Home() {
                 className="space-y-6 text-lg text-muted-foreground"
               >
                 <p>
-                  Founded in 2014, Gabulouz LLC has grown from a small design studio to a full-service digital powerhouse. 
+                  Founded in 2011, Gabulouz LLC has grown from a small design studio to a full-service digital powerhouse. 
                   Our philosophy is simple: create work that matters.
                 </p>
                 <p>
