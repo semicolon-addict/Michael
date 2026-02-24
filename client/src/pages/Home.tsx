@@ -361,7 +361,7 @@ export default function Home() {
       </div>
 
       <div className="absolute -bottom-6 -left-3 bg-background border border-border shadow-xl rounded-2xl px-6 py-4 hidden md:block">
-        <p className="text-sm text-muted-foreground">Co-Founder & Creative Director</p>
+        <p className="text-sm text-muted-foreground">CEO & Creative Director</p>
       </div>
     </motion.div>
 
@@ -405,7 +405,7 @@ export default function Home() {
           - Michael Ejiagu
         </p>
         <p className="text-sm text-muted-foreground">
-          Co-Founder, Gabulouz LLC
+          CEO, Gabulouz LLC
         </p>
       </div>
     </motion.div>
