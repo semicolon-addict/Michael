@@ -40,6 +40,12 @@ const services: Service[] = [
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80", // Strategy meeting
   },
   {
+  title: "Financial Professional Services",
+  slug: "financial-professional-services",
+  desc: "Strategic financial advisory, compliance, and investment solutions for sustainable growth.",
+  image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+},
+  {
     title: "Web Development",
     slug: "web-development",
     desc: "Building blazing fast, secure, and scalable web applications using modern technologies.",
@@ -354,8 +360,8 @@ export default function Home() {
         />
       </div>
 
-      <div className="absolute -bottom-6 -left-6 bg-background border border-border shadow-xl rounded-2xl px-6 py-4 hidden md:block">
-        <p className="text-sm text-muted-foreground">Founder & Creative Director</p>
+      <div className="absolute -bottom-6 -left-3 bg-background border border-border shadow-xl rounded-2xl px-6 py-4 hidden md:block">
+        <p className="text-sm text-muted-foreground">Co-Founder & Creative Director</p>
       </div>
     </motion.div>
 
@@ -371,6 +377,10 @@ export default function Home() {
       </h2>
 
       <div className="space-y-6 text-lg text-muted-foreground">
+        <p>The company was founded by <b>Mr. Gabriel Ejiagu</b>, my Father who passed away , 
+          and now it’s my goal to continue his vision
+        </p>
+
         <p>
           When I started Gabulouz LLC, the vision was simple - build an agency that
           doesn’t just deliver services, but creates impact. Every brand has a
@@ -385,8 +395,8 @@ export default function Home() {
         </p>
 
         <p>
-          Thank you for trusting us with your vision. We look forward to
-          building something remarkable together.
+          Thank you for trusting us with your vision.
+          We look forward to building something remarkable together.
         </p>
       </div>
 
@@ -395,7 +405,7 @@ export default function Home() {
           - Michael Ejiagu
         </p>
         <p className="text-sm text-muted-foreground">
-          Founder, Gabulouz LLC
+          Co-Founder, Gabulouz LLC
         </p>
       </div>
     </motion.div>
