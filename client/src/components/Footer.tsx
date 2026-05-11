@@ -31,7 +31,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6">Contact</h3>
             <ul className="space-y-4 text-muted-foreground">
               <li>info@gabulouz.com</li>
-              <li>+1 (833) 315 2102</li>
+              <li>+1 7864508266</li>
               <li>2121 N broad st, #1019
                 Philadelphia pa 19132,
                 United States.</li>
